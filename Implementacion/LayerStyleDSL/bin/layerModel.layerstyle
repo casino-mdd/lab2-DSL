@@ -1,0 +1,26 @@
+layer Presentation {
+	segment Faces
+	segment Configuration
+}
+
+layer Control {
+	segment Controllers
+	segment Converters
+}
+
+layer Persistence {
+	segment Pojos
+	segment EntityManager
+}
+
+relation PreCon {
+	type: AllowedToUse
+	source: Presentation
+	target: Control
+}
+
+relation ConPer {
+	type: AllowedToUse
+	source: Control
+	target: Persistence
+}

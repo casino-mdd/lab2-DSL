@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.xtext.lab2.layeredStyleDSL
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.lab2.layeredStyleDSL
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.lab2.layeredStyleDSL; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.eclipse.xtend.lib;bundle-version="2.14.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.xtext.lab2.layeredStyle.parser.antlr.internal,
+ org.xtext.lab2.layeredStyle.validation,
+ org.xtext.lab2.layeredStyle.services,
+ org.xtext.lab2.layeredStyle.parser.antlr,
+ org.xtext.lab2.layeredStyle.layeredStyleDSL.impl,
+ org.xtext.lab2.layeredStyle.generator,
+ org.xtext.lab2.layeredStyle,
+ org.xtext.lab2.layeredStyle.scoping,
+ org.xtext.lab2.layeredStyle.layeredStyleDSL.util,
+ org.xtext.lab2.layeredStyle.layeredStyleDSL,
+ org.xtext.lab2.layeredStyle.serializer
+Import-Package: org.apache.log4j

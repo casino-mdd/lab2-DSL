@@ -1,0 +1,29 @@
+grammar org.xtext.lab2.layeredStyle.LayeredStyleDSL with org.eclipse.xtext.common.Terminals
+
+generate layeredStyleDSL "http://www.xtext.org/lab2/layeredStyle/LayeredStyleDSL"
+
+LayeredStyle:
+	(elements+=AbstractElement)*;
+
+AbstractElement: 
+	Layer | Relation;
+	
+Layer: 
+	'layer' name=ID '{'
+		(layerSegments+=LayerSegment)*
+	'}';
+
+LayerSegment: 
+	'segment' name=ID ;
+
+
+Relation:
+	'relation' name=ID '{'
+		'type' ':' SubRelation
+		'source' ':' type=[Layer]
+		'target' ':' type=[Layer]
+		
+	'}';
+
+SubRelation: 
+	'AllowedToUse' | 'AllowedToUseBelow';
